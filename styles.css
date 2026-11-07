@@ -328,3 +328,390 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 
 /* Resumo de absenteísmo por períodos */
 .period-summary{padding:20px;margin:0 0 20px}.period-headline{font-size:15px;margin:10px 0 4px}.period-note{color:#74817c;font-size:11px;margin:0 0 12px}.period-table-scroll{overflow-x:auto}.period-table{border-collapse:collapse;width:100%;min-width:600px;font-size:12px}.period-table th,.period-table td{text-align:left;padding:6px 10px 6px 0}.period-table thead th{font-weight:700}.period-total{font-weight:700;border-top:1px solid #e7ece9}.period-rate{display:flex;align-items:center;gap:5px}.period-bar{display:inline-block;width:80px;height:8px;background:#f3e5e2}.period-bar i{display:block;height:100%;background:#c84239}@media(max-width:600px){.period-summary{padding:14px}.period-headline{font-size:13px}.period-table{font-size:11px}}
+
+
+/* Identidade visual profissional — mantém os componentes e cálculos existentes. */
+:root{--green:#087556;--green-dark:#075d45;--mint:#e6f4ee;--ink:#172b25;--muted:#667871;--line:#dce6e0;--canvas:#f3f6f4;--white:#fff;--shadow:0 4px 18px rgba(24,55,42,.06)}
+html,body{background:var(--canvas);color:var(--ink)}
+.sidebar{background:#fff;border-right:1px solid #e0e9e4;box-shadow:4px 0 20px rgba(27,57,43,.025)}
+.brand{color:#172b25;letter-spacing:-.4px}
+.brand-mark{background:#087556;border-radius:10px;box-shadow:0 4px 10px rgba(8,117,86,.18)}
+.main-nav{gap:7px}
+.nav-link{color:#586c62;font-weight:600;border-radius:10px;transition:background .15s,color .15s}
+.nav-link:hover{background:#f0f7f3;color:#075d45}
+.nav-link.active{background:#e3f2eb;color:#075d45;box-shadow:inset 3px 0 0 #087556}
+.sidebar-bottom{color:#647970}
+.main-content{max-width:1680px}
+.page-heading h1{color:#162c24;letter-spacing:-.8px}
+.page-heading p,.person-sub{color:#657970}
+.section-title{color:#19392c;letter-spacing:-.15px}
+.panel{background:#fff;border:1px solid #e1eae5;border-radius:14px;box-shadow:0 4px 18px rgba(24,55,42,.055)}
+.btn,.filter-btn,.turn-filter-btn,.icon-btn,.nav-link{transition:background-color .15s,border-color .15s,color .15s,box-shadow .15s}
+.btn{border-radius:9px}
+.btn.primary{background:#087556;color:#fff}
+.btn.primary:hover{background:#075d45}
+.btn.secondary{background:#edf3ef;color:#345a48}
+.btn.secondary:hover{background:#e1ede6}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex="0"]:focus-visible{outline:3px solid #54ac83;outline-offset:2px}
+.account-bar{background:#fff;border-color:#e0e9e4;color:#456151;border-radius:10px}
+.turn-toolbar{background:#fff;border:1px solid #e1eae5;border-radius:12px;padding:10px 12px;box-shadow:0 3px 12px rgba(24,55,42,.035)}
+.turn-filter-btn,.filter-btn{border-color:#dce7e0;color:#53675c;background:#fff}
+.turn-filter-btn.active,.filter-btn.active{background:#087556;border-color:#087556;color:#fff}
+.turn-filter-btn.active:hover,.filter-btn.active:hover{color:#fff;background:#075d45}
+.stats-grid{gap:12px}
+.stat-card{position:relative;border-top:3px solid #b9daca;padding:16px 17px;box-shadow:0 4px 16px rgba(24,55,42,.055)}
+.stat-card:first-child{border-top-color:#cc7466}
+.stat-card:nth-child(2){border-top-color:#80a997}
+.stat-card:nth-child(3){border-top-color:#48a47d}
+.stat-card:nth-child(4){border-top-color:#d2a461}
+.stat-card:nth-child(5){border-top-color:#568db3}
+.stat-label{color:#60746a;font-weight:700;line-height:1.35}
+.stat-value{color:#18372a;letter-spacing:-.6px}
+.stat-sub{color:#718178;line-height:1.4}
+.period-summary{padding:20px;border-color:#dceae2}
+.period-summary .section-title{font-size:16px}
+.period-headline{color:#254638;line-height:1.5}
+.period-note{color:#62766b;font-size:12px}
+.period-table-scroll{border:1px solid #e4ede7;border-radius:10px}
+.period-table{font-size:12px}
+.period-table th,.period-table td{padding:10px 12px;border-bottom:1px solid #edf2ef}
+.period-table thead th{background:#f1f7f3;color:#536a5d;white-space:nowrap}
+.period-table tbody tr:last-child td{border-bottom:0}
+.period-total{background:#f5faf7;color:#184a33;border-top:1px solid #dbe8df}
+.period-bar{border-radius:6px;overflow:hidden}
+.report-card,.function-chart-card,.people-panel,.teams-panel,.roles-panel{border-color:#e1eae5}
+.function-chart-card{background:#fff}
+.function-chart-head h3{color:#19392c}
+.function-chart-legend{color:#596d61}
+.attendance-panel{border-radius:12px;border-color:#dfe9e3}
+.attendance-team tbody tr:hover td:not(.person-col){background:#f4faf6}
+.attendance-team .status-cell:focus-visible{outline-offset:1px}
+.quick-fill-panel{border-color:#dbeae1}
+input,select,textarea{color:#19392c}
+input:focus,select:focus,textarea:focus{border-color:#73b99a;box-shadow:0 0 0 3px rgba(70,158,114,.16)}
+dialog{border:1px solid #e0eae4;box-shadow:0 24px 80px rgba(20,47,34,.25)}
+.footer-note{color:#72867a}
+@media(max-width:850px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+ .sidebar{background:#fff;border-top:1px solid #dfe9e3;box-shadow:0 -5px 20px rgba(24,55,42,.06)}
+ .main-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+ .nav-link{box-shadow:none!important;font-size:10px;min-width:0}
+ .nav-link.active{background:#e3f2eb}
+ .turn-toolbar{padding:9px 10px}
+ .stats-grid{gap:9px}
+ .stat-card{padding:13px 12px;border-top-width:3px}
+ .stat-label{font-size:10px}
+ .stat-sub{font-size:10px}
+ .period-summary{padding:14px}
+ .period-table th,.period-table td{padding:9px 10px}
+}
+
+/* Menu claro com detalhes em cinza e ícones vetoriais. */
+.sidebar{background:#fff;border-color:#e2e5e9;box-shadow:4px 0 20px rgba(31,41,55,.035)}
+.sidebar .brand{color:#252b33}
+.sidebar .brand small{color:#7c8490}
+.sidebar .brand-mark{background:#525b67;color:#fff;box-shadow:0 4px 10px rgba(55,65,81,.14)}
+.sidebar .nav-link{color:#5b626d}
+.sidebar .nav-link:hover{background:#f2f3f5;color:#303740}
+.sidebar .nav-link.active,.sidebar .nav-link.active:hover{background:#e9ebee;color:#252b33;box-shadow:inset 3px 0 0 #707985}
+.sidebar .nav-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px}
+.sidebar .nav-icon svg{display:block;width:20px;height:20px}
+.sidebar-bottom{color:#737c86}
+@media(max-width:600px){
+ .sidebar{background:#fff;border-color:#e2e5e9;box-shadow:0 -5px 20px rgba(31,41,55,.06)}
+ .sidebar .nav-link.active,.sidebar .nav-link.active:hover{background:#e9ebee;color:#252b33;box-shadow:none!important}
+ .sidebar .nav-icon{flex:0 0 auto;width:22px;height:22px}
+ .sidebar .nav-icon svg{width:19px;height:19px}
+}
+
+/* Menu claro com seleção verde */
+.sidebar { background:#fff; border-color:#e0eae4; }
+.sidebar .brand { color:#173c2c; }
+.sidebar .brand small { color:#688174; }
+.sidebar .brand-mark { background:#087556; color:#fff; box-shadow:0 4px 10px rgba(8,117,86,.16); }
+.sidebar .nav-link { color:#315f4d; background:transparent; }
+.sidebar .nav-link:hover { background:#edf8f2; color:#075d45; }
+.sidebar .nav-link.active, .sidebar .nav-link.active:hover { background:#d7f2e2; color:#076b40; box-shadow:inset 3px 0 0 #087556; }
+.sidebar-bottom { color:#60796c; }
+/* Layout compacto sem alterar funções, conteúdo ou campos */
+.main-content { padding:24px clamp(18px,2.5vw,36px) 20px; }
+.page-heading { margin-bottom:14px; }
+.page-heading h1 { margin-bottom:3px; }
+.hero-strip { margin-bottom:12px; gap:8px; }
+.turn-toolbar { padding:7px 10px; margin:6px 0; }
+.quick-fill-panel { padding:10px 12px; gap:10px; margin:8px 0 5px; }
+.quick-fill-status { margin:5px 0 8px; }
+.stats-grid, .monthly-metric-grid { gap:9px; margin-bottom:12px; }
+.stat-card { padding:12px 14px; }
+.stat-value { margin-top:5px; }
+.section-head { margin-bottom:9px; }
+.people-panel, .teams-panel, .roles-panel { padding:14px; margin-bottom:12px; }
+.person-row { padding-top:9px; padding-bottom:9px; }
+.report-layout { gap:10px; }
+.report-card, .supplemental-card { padding:14px; }
+.report-card { min-height:0; }
+.report-item { padding:8px 0; }
+.period-summary { padding:14px; margin-bottom:12px; }
+.period-headline { margin:6px 0 3px; }
+.period-note { margin-bottom:8px; }
+.period-table th, .period-table td { padding:7px 10px; }
+.monthly-ops-section, .history-section { margin:14px 0; }
+.footer-note { margin-top:16px; }
+@media(max-width:850px) { .main-content { padding:20px 18px; } }
+@media(max-width:600px) {
+ .sidebar { background:#fff; border-color:#e0eae4; }
+ .sidebar .nav-link.active, .sidebar .nav-link.active:hover { background:#d7f2e2; color:#076b40; box-shadow:none!important; }
+ .main-content { padding:0 12px 88px; }
+ .page-heading { margin:10px 0 12px; }
+ .hero-strip { margin-bottom:10px; }
+ .turn-toolbar { padding:6px 8px; }
+ .quick-fill-panel { padding:10px; gap:8px; }
+ .stats-grid, .monthly-metric-grid { gap:8px; }
+ .stat-card { padding:11px; }
+ .people-panel, .teams-panel, .roles-panel, .report-card, .supplemental-card, .period-summary { padding:12px; }
+ .period-table th, .period-table td { padding:7px 8px; }
+}
+
+
+/* Presença: composição inspirada na referência, com navegação clara e espaço otimizado. */
+@media (min-width:851px){
+ .sidebar{width:228px;padding:24px 0 20px;border-right:1px solid #dfe6e2}
+ .sidebar .brand{padding:0 12px}
+ .sidebar .main-nav{padding-right:23px;margin-top:38px;gap:4px}
+ .sidebar .nav-link{min-height:49px;border-radius:0 12px 12px 0;padding:10px 15px;gap:14px}
+ .sidebar-bottom{padding:14px 8px 0;border-top:1px solid #e2e8e5;margin-right:23px;line-height:1.4}
+ .main-content{margin-left:228px;padding-left:26px;padding-right:26px}
+}
+.sidebar .brand{color:#142a21}
+.sidebar .brand-mark{background:#075f43}
+.sidebar .nav-link{color:#425b50}
+.sidebar .nav-link:hover{background:#f0f7f3;color:#075f43}
+.sidebar .nav-link.active,.sidebar .nav-link.active:hover{background:#e6f1eb;color:#075f43}
+#view:has(.attendance-panel) .page-heading{margin-bottom:14px}
+#view:has(.attendance-panel) .page-heading h1{font-size:30px;margin:0 0 5px}
+#view:has(.attendance-panel) .hero-strip{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:12px}
+#view:has(.attendance-panel) .legend{gap:7px}
+#view:has(.attendance-panel) .legend-item{border-radius:9px;padding:8px 12px;font-size:12px;color:#294135;background:#fff;border:1px solid #dce6df}
+#view:has(.attendance-panel) .month-control{padding:5px;border-radius:14px;gap:12px;box-shadow:0 2px 4px rgba(25,50,38,.05)}
+#view:has(.attendance-panel) .month-control strong{min-width:160px;font-size:14px}
+#view:has(.attendance-panel) .month-control .icon-btn{width:38px;height:38px}
+#view:has(.attendance-panel) .turn-toolbar{display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:10px;background:transparent;border:0;box-shadow:none;padding:0;margin:0 0 14px}
+#view:has(.attendance-panel) .turn-buttons{display:flex;gap:7px;flex-wrap:wrap}
+#view:has(.attendance-panel) .turn-filter-btn{padding:10px 13px;border-radius:11px;background:#fff;border:1px solid #dce6df;color:#294135}
+#view:has(.attendance-panel) .turn-filter-btn.active{background:#075f43;border-color:#075f43;color:#fff}
+#view:has(.attendance-panel) .quick-fill-panel{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;padding:18px 20px;margin:0 0 10px;border-radius:17px;border:1px solid #e0e8e3;box-shadow:0 4px 14px rgba(28,52,41,.06)}
+#view:has(.attendance-panel) .quick-fill-copy{display:grid;gap:6px;min-width:0}
+#view:has(.attendance-panel) .quick-fill-label{font-size:11px;color:#086147;letter-spacing:.08em}
+#view:has(.attendance-panel) .quick-fill-copy strong{font-size:18px;line-height:1.35}
+#view:has(.attendance-panel) .quick-fill-copy small{font-size:12px;color:#71857b;line-height:1.35}
+#view:has(.attendance-panel) .quick-fill-copy select{background:#e7f2eb;color:#075f43;padding:6px 8px}
+#view:has(.attendance-panel) .quick-fill-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex:0 0 auto;width:auto}
+#view:has(.attendance-panel) .quick-fill-actions button{flex:none;min-height:40px;padding:10px 15px;font-size:13px;border-radius:11px}
+#view:has(.attendance-panel) .quick-fill-actions .primary{background:#075f43;color:white}
+#view:has(.attendance-panel) .quick-fill-actions .secondary{background:#eef1ef;color:#344c40}
+#view:has(.attendance-panel) .quick-fill-status{font-size:12px;margin:0 2px 11px;color:#6d8377}
+#view:has(.attendance-panel) .attendance-panel{border-radius:8px;border:1px solid #dfe8e2;box-shadow:none}
+#view:has(.attendance-panel) .attendance-team{margin-bottom:8px}
+#view:has(.attendance-panel) .attendance-team thead th{height:44px;background:#e4f1eb;color:#075f43;border-bottom:2px solid var(--team-color);font-size:12px}
+#view:has(.attendance-panel) .attendance-team thead th{background:color-mix(in srgb,var(--team-color) 12%,white);color:color-mix(in srgb,var(--team-color) 70%,black)}
+#view:has(.attendance-panel) .attendance-team thead .day-date,#view:has(.attendance-panel) .attendance-team thead .weekday-label{color:inherit;font-size:10px}
+#view:has(.attendance-panel) .attendance-team thead .weekday-label{text-transform:lowercase;font-weight:500}
+#view:has(.attendance-panel) .attendance-team tbody td{height:42px}
+#view:has(.attendance-panel) .attendance-team tbody td.person-col,#view:has(.attendance-panel) .attendance-team tbody tr:hover td.person-col{background:#fff!important;color:#26342d!important;border-bottom:1px solid #e4e9e7}
+#view:has(.attendance-panel) .attendance-team tbody .person-col>span{white-space:normal;line-height:1.2}
+#view:has(.attendance-panel) .attendance-team .exclude-col .month-exclude{color:#9aa9a1;background:transparent}
+#view:has(.attendance-panel) .attendance-team .exclude-col .month-exclude:hover{color:#b9423d;background:#fff0ef}
+#view:has(.attendance-panel) .attendance-team .status-empty{background:#f8fbf9;border:1px solid #d3e2d9}
+#view:has(.attendance-panel) .attendance-team .status-cell{border-radius:10px}
+@media(max-width:850px){
+ #view:has(.attendance-panel) .turn-toolbar{justify-content:flex-start;flex-wrap:wrap}
+}
+@media(max-width:600px){
+ .sidebar .nav-link.active,.sidebar .nav-link.active:hover{background:#e6f1eb;color:#075f43}
+ #view:has(.attendance-panel) .page-heading h1{font-size:24px}
+ #view:has(.attendance-panel) .legend-item{font-size:10px;padding:6px 8px}
+ #view:has(.attendance-panel) .month-control strong{min-width:130px;font-size:12px}
+ #view:has(.attendance-panel) .month-control .icon-btn{width:34px;height:34px}
+ #view:has(.attendance-panel) .turn-toolbar{gap:6px;margin-bottom:10px}
+ #view:has(.attendance-panel) .turn-filter-btn{padding:8px 10px;font-size:10px}
+ #view:has(.attendance-panel) .quick-fill-panel{flex-direction:column;align-items:stretch;padding:13px;gap:10px}
+ #view:has(.attendance-panel) .quick-fill-copy strong{font-size:15px}
+ #view:has(.attendance-panel) .quick-fill-actions{flex-direction:row;align-items:stretch;flex-wrap:wrap;width:100%}
+ #view:has(.attendance-panel) .quick-fill-actions button{font-size:11px;padding:9px 11px;min-height:40px}
+ #view:has(.attendance-panel) .attendance-team tbody td{height:38px}
+ #view:has(.attendance-panel) .attendance-team thead th{height:39px}
+}
+
+
+/* Seleção do menu conforme a referência e cabeçalho de presença compacto. */
+@media (min-width:601px){
+ .sidebar .nav-link.active,.sidebar .nav-link.active:hover{
+  background:#e6f1eb;color:#075f43;border-radius:12px;
+  box-shadow:inset 0 0 0 2px #087453;
+  font-weight:700;
+ }
+}
+@media (max-width:600px){
+ .sidebar .nav-link.active,.sidebar .nav-link.active:hover{
+  background:#e6f1eb;color:#075f43;border-radius:10px;
+  box-shadow:inset 0 0 0 2px #087453!important;font-weight:700;
+ }
+}
+/* Somente a página Presença: legendas e mês juntos quando houver espaço. */
+.main-content:has(#view .attendance-panel){padding-top:12px}
+#view:has(.attendance-panel) .page-heading{margin:0 0 7px}
+#view:has(.attendance-panel) .page-heading h1{margin:0 0 2px;line-height:1.15}
+#view:has(.attendance-panel) .page-heading p{line-height:1.3}
+#view:has(.attendance-panel) .hero-strip{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 10px;margin-bottom:7px}
+#view:has(.attendance-panel) .legend{gap:5px}
+#view:has(.attendance-panel) .legend-item{padding:5px 8px}
+#view:has(.attendance-panel) .month-control{gap:6px;padding:3px}
+#view:has(.attendance-panel) .month-control strong{min-width:130px;font-size:13px}
+#view:has(.attendance-panel) .month-control .icon-btn{width:32px;height:32px}
+#view:has(.attendance-panel) .turn-toolbar{justify-content:flex-start;gap:6px;margin:0 0 7px}
+#view:has(.attendance-panel) .turn-buttons{gap:5px}
+#view:has(.attendance-panel) .turn-filter-btn{padding:7px 10px}
+#view:has(.attendance-panel) .quick-fill-panel{padding:9px 12px;gap:8px;margin:0 0 5px;border-radius:12px}
+#view:has(.attendance-panel) .quick-fill-copy{gap:2px}
+#view:has(.attendance-panel) .quick-fill-copy strong{font-size:15px;line-height:1.25}
+#view:has(.attendance-panel) .quick-fill-copy select{padding:3px 6px}
+#view:has(.attendance-panel) .quick-fill-actions{flex-direction:row;align-items:center;flex-wrap:wrap;gap:6px}
+#view:has(.attendance-panel) .quick-fill-actions button{min-height:36px;padding:7px 11px}
+#view:has(.attendance-panel) .quick-fill-status{margin:0 2px 6px;line-height:1.3}
+@media(max-width:600px){
+ .main-content:has(#view .attendance-panel){padding-top:0}
+ .main-content:has(#view .attendance-panel) .mobile-header{padding:8px 0 5px}
+ .main-content:has(#view .attendance-panel) .account-bar{margin-top:0;margin-bottom:5px}
+ #view:has(.attendance-panel) .page-heading{margin:5px 0 6px}
+ #view:has(.attendance-panel) .page-heading h1{font-size:22px}
+ #view:has(.attendance-panel) .hero-strip{gap:6px;margin-bottom:6px}
+ #view:has(.attendance-panel) .legend-item{padding:4px 7px}
+ #view:has(.attendance-panel) .month-control strong{min-width:110px;font-size:12px}
+ #view:has(.attendance-panel) .month-control .icon-btn{width:30px;height:30px}
+ #view:has(.attendance-panel) .turn-toolbar{gap:5px;margin-bottom:6px}
+ #view:has(.attendance-panel) .turn-filter-btn{padding:6px 8px}
+ #view:has(.attendance-panel) .quick-fill-panel{padding:8px 10px;gap:6px}
+ #view:has(.attendance-panel) .quick-fill-actions{flex-direction:row;gap:6px}
+ #view:has(.attendance-panel) .quick-fill-actions button{min-height:38px;padding:7px 9px}
+}
+
+/* Seletor compacto no histórico individual */
+.history-detail .history-month-bar{display:flex;align-items:center;gap:8px;margin:3px 0 10px;flex-wrap:wrap}.history-detail .history-month-bar label{display:inline;margin:0;color:#617168;font-size:11px;font-weight:700}.history-detail #historyMonth{width:auto;max-width:100%;min-height:34px;padding:5px 8px;border:1px solid #d7e7de;border-radius:8px;color:#176647;background:#f8fcf9;font-size:12px;font-weight:600;font-family:inherit}.history-detail #historyMonth:focus{outline:2px solid #80c7a2;outline-offset:1px}@media(max-width:600px){.history-detail .history-month-bar{margin-top:8px}.history-detail #historyMonth{font-size:14px;min-height:38px}}
+
+/* Histórico: registros mais próximos, mantendo a leitura e as duas colunas. */
+.history-detail .history-entry{padding:4px 2px;line-height:1.2}
+.history-detail .history-entry .history-status{padding:3px 9px;line-height:1.2}
+
+
+/* Movimentação: mesma lógica, apresentação mais clara. */
+.monthly-ops-section{margin:22px 0 26px}
+.monthly-ops-section .section-head{margin-bottom:14px}
+.monthly-ops-section .section-title{font-size:18px;line-height:1.3;color:#172f27}
+.monthly-ops-section .person-sub{font-size:12px;line-height:1.5;color:#63776d;margin-top:5px}
+.monthly-ops-section .monthly-metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.monthly-ops-section .stat-card{min-width:0;padding:20px 22px 22px;border:1px solid #dfe9e4;border-top:4px solid #477ec6;border-radius:16px;background:#fff;box-shadow:0 6px 22px rgba(21,65,47,.06)}
+.monthly-ops-section .monthly-dismissed-card{border-top-color:#d35e58}
+.monthly-ops-section .stat-label{font-size:13px;font-weight:700;color:#344f42;line-height:1.4}
+.monthly-ops-section .monthly-count-input.stat-value{width:100%;margin:8px 0 3px;padding:1px 4px;border-radius:6px;font-size:36px;font-weight:800;line-height:1.1;letter-spacing:-1px}
+.monthly-ops-section .monthly-registered-card .stat-value{color:#2673d9}
+.monthly-ops-section .monthly-dismissed-card .stat-value{color:#c94040}
+.monthly-ops-section .stat-sub{display:inline-block;padding:4px 9px;margin-top:4px;border-radius:7px;background:#eff5f1;color:#526c5d;font-size:11px;font-weight:700;line-height:1.3}
+.monthly-ops-section .monthly-names-label{display:grid;gap:7px;margin:16px 0 0;color:#334e40;font-size:13px;font-weight:700}
+.monthly-ops-section .monthly-names-label textarea{display:block;width:100%;min-height:115px;resize:vertical;padding:12px 13px;border:1px solid #cadbd2;border-radius:10px;background:#f8fcfa;color:#1c3026;font-family:inherit;font-size:14px;font-weight:400;line-height:1.6}
+.monthly-ops-section .monthly-names-label textarea::placeholder{color:#7c8c83;opacity:1}
+.monthly-ops-section .monthly-names-label textarea:focus{background:#fff;border-color:#168a65;outline:2px solid #bfe4cf;outline-offset:1px}
+.monthly-ops-section .monthly-names-label textarea[readonly]{background:#f5f7f6;color:#68756f}
+@media(max-width:800px){.monthly-ops-section .monthly-metric-grid{grid-template-columns:1fr;gap:12px}}
+@media(max-width:600px){.monthly-ops-section .stat-card{padding:17px}.monthly-ops-section .monthly-names-label textarea{font-size:16px;min-height:100px}.monthly-ops-section .section-title{font-size:16px}}
+
+
+/* Relatório: férias e ocorrências com leitura mais clara, sem alterar a lógica. */
+.supplemental-report-grid { gap:16px; align-items:start; }
+.supplemental-report-grid .supplemental-card { min-width:0; padding:22px; border:1px solid #dfeae4; border-radius:16px; background:#fff; box-shadow:0 6px 22px rgba(21,65,47,.06); }
+.supplemental-report-grid .supplemental-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:14px; padding-bottom:16px; margin-bottom:14px; border-bottom:1px solid #e7f0eb; }
+.supplemental-report-grid .supplemental-head > div:first-child { flex:1 1 175px; min-width:0; }
+.supplemental-report-grid .section-title { color:#17382a; font-size:18px; line-height:1.3; }
+.supplemental-report-grid .supplemental-head .person-sub { margin:5px 0 0; color:#61776b; font-size:12px; line-height:1.45; }
+.supplemental-report-grid .vacation-head-actions { display:flex; flex-wrap:wrap; gap:7px; justify-content:flex-start; }
+.supplemental-report-grid .supplemental-head .btn { min-height:38px; padding:9px 12px; border-radius:9px; font-size:11px; }
+.supplemental-report-grid .supplemental-head .btn.secondary { background:#edf5f0; color:#315a45; }
+.supplemental-report-grid .supplemental-head .btn.secondary:hover { background:#dceee3; }
+.supplemental-report-grid .supplemental-list { display:grid; gap:9px; }
+.supplemental-report-grid .supplemental-row { min-width:0; padding:13px; border:1px solid #e4eee8; border-radius:11px; background:#f9fcfa; gap:10px; }
+.supplemental-report-grid .supplemental-row > div { min-width:0; }
+.supplemental-report-grid .supplemental-row strong { display:block; overflow-wrap:anywhere; color:#1c3528; font-size:12px; line-height:1.4; }
+.supplemental-report-grid .supplemental-row small { margin-top:5px; color:#65796e; font-size:11px; }
+.supplemental-report-grid .vacation-date-info { display:grid; gap:4px; font-size:12px; line-height:1.35; }
+.supplemental-report-grid .vacation-date-info b { color:#087a53; }
+.supplemental-report-grid .row-actions { align-items:center; }
+.supplemental-report-grid .row-actions .text-button { display:inline-grid; place-items:center; width:34px; height:34px; padding:5px; border:1px solid #dfeae4; border-radius:8px; background:#fff; color:#526c5e; }
+.supplemental-report-grid .row-actions .text-button:hover { color:#087a53; border-color:#95cbae; }
+.supplemental-report-grid .row-actions .text-button:focus-visible,.supplemental-report-grid button:focus-visible { outline:2px solid #168a65; outline-offset:2px; }
+.supplemental-report-grid .incident-row p { font-size:12px; line-height:1.5; color:#465e50; }
+.supplemental-report-grid .supplemental-list > .empty { padding:25px 14px; border:1px dashed #d6e6dc; border-radius:11px; background:#f8fbf9; color:#65796e; line-height:1.5; }
+.supplemental-report-grid .vacation-analytics { margin-top:18px; padding:17px; border:1px solid #dfeee5; border-radius:12px; background:#f7fbf8; }
+.supplemental-report-grid .vacation-analytics-head h3 { font-size:15px; line-height:1.35; color:#17382a; }
+.supplemental-report-grid .vacation-analytics-head p { font-size:11px; line-height:1.5; color:#61776b; }
+.supplemental-report-grid .vacation-total-count { background:#dff3e8; color:#086b49; }
+.supplemental-report-grid .vacation-chart-switch { gap:7px; margin:14px 0; }
+.supplemental-report-grid .vacation-chart-switch .filter-btn { min-height:36px; font-size:11px; font-weight:700; border-color:#d4e6da; }
+.supplemental-report-grid .vacation-chart-title { color:#395547; font-size:12px; font-weight:700; }
+.supplemental-report-grid .vacation-chart-bars { display:grid; gap:10px; }
+.supplemental-report-grid .vacation-chart-row { grid-template-columns:minmax(0,1fr) minmax(55px,1.5fr) 24px; gap:9px; }
+.supplemental-report-grid .vacation-chart-label { overflow-wrap:anywhere; white-space:normal; line-height:1.3; }
+.supplemental-report-grid .vacation-chart-track { background:#e0ece4; height:10px; }
+.supplemental-report-grid .vacation-chart-track i { background:#12845f; }
+.supplemental-report-grid .vacation-analytics .empty { padding:16px 0 4px; color:#65796e; }
+@media(max-width:800px) { .supplemental-report-grid { grid-template-columns:1fr; } .supplemental-report-grid .incident-row { grid-template-columns:minmax(0,1fr) auto; } .supplemental-report-grid .incident-row p { grid-column:1/-1; grid-row:2; } }
+@media(max-width:600px) { .supplemental-report-grid .supplemental-card { padding:16px; } .supplemental-report-grid .section-title { font-size:16px; } .supplemental-report-grid .supplemental-head { gap:12px; } .supplemental-report-grid .vacation-head-actions { width:100%; } .supplemental-report-grid .supplemental-row:not(.incident-row) { grid-template-columns:minmax(0,1fr) auto; } .supplemental-report-grid .supplemental-row:not(.incident-row) .vacation-date-info { grid-column:1; grid-row:2; } .supplemental-report-grid .supplemental-row:not(.incident-row) .row-actions { grid-column:2; grid-row:1 / span 2; } .supplemental-report-grid .vacation-analytics { padding:13px; } }
+
+/* Quantidade de pessoas na lista completa de férias */
+.vacation-people-summary{display:inline-block;margin:0 0 12px;padding:7px 11px;border-radius:9px;background:#e8f5ef;color:#0c704f;font-size:12px;font-weight:600}.vacation-people-summary strong{font-size:14px}
+
+/* Férias e ocorrências: visual compacto, mantendo os controles existentes */
+.supplemental-report-grid { gap:12px; align-items:start; }
+.supplemental-report-grid .supplemental-card { padding:15px; border-radius:14px; border-color:#dceae2; box-shadow:0 4px 16px rgba(21,65,47,.05); }
+.supplemental-report-grid .supplemental-head { gap:9px; padding-bottom:11px; margin-bottom:10px; }
+.supplemental-report-grid .section-title { font-size:15px; line-height:1.3; }
+.supplemental-report-grid .supplemental-head .person-sub { margin-top:3px; font-size:11px; line-height:1.35; }
+.supplemental-report-grid .vacation-head-actions { gap:6px; }
+.supplemental-report-grid .supplemental-head .btn { min-height:34px; padding:7px 9px; font-size:11px; border-radius:8px; }
+.supplemental-report-grid .supplemental-list { gap:6px; }
+.supplemental-report-grid .supplemental-row { padding:8px 10px; gap:8px; border-radius:9px; background:#f8fbf9; }
+.supplemental-report-grid .supplemental-row strong { font-size:12px; line-height:1.3; }
+.supplemental-report-grid .supplemental-row small { margin-top:2px; font-size:10px; }
+.supplemental-report-grid .vacation-date-info { gap:2px; font-size:11px; line-height:1.3; }
+.supplemental-report-grid .supplemental-row .vacation-date-info > span + span b { font-size:12px; }
+.supplemental-report-grid .row-actions { gap:4px; }
+.supplemental-report-grid .row-actions .text-button { width:34px; height:34px; }
+.supplemental-report-grid .incident-row p { font-size:11px; line-height:1.35; }
+.supplemental-report-grid .supplemental-list > .empty { padding:15px 10px; font-size:11px; border-radius:9px; }
+.supplemental-report-grid .vacation-people-summary { margin:0 0 8px; padding:5px 9px; font-size:11px; }
+.supplemental-report-grid .vacation-people-summary strong { font-size:13px; }
+.supplemental-report-grid .vacation-analytics { margin-top:10px; padding:12px; border-radius:10px; }
+.supplemental-report-grid .vacation-analytics-head { gap:8px; }
+.supplemental-report-grid .vacation-analytics-head h3 { font-size:13px; line-height:1.3; }
+.supplemental-report-grid .vacation-analytics-head p { font-size:10px; line-height:1.35; margin-top:3px; }
+.supplemental-report-grid .vacation-total-count { font-size:10px; }
+.supplemental-report-grid .vacation-chart-switch { gap:6px; margin:9px 0; }
+.supplemental-report-grid .vacation-chart-switch .filter-btn { min-height:34px; padding:6px 9px; font-size:11px; }
+.supplemental-report-grid .vacation-chart-title { font-size:11px; }
+.supplemental-report-grid .vacation-chart-bars { gap:6px; }
+.supplemental-report-grid .vacation-chart-row { gap:7px; font-size:11px; }
+.supplemental-report-grid .vacation-chart-track { height:7px; }
+.supplemental-report-grid .vacation-analytics .empty { padding:10px 0 2px; font-size:11px; }
+@media(max-width:800px){ .supplemental-report-grid { grid-template-columns:1fr; } }
+@media(max-width:600px){
+ .supplemental-report-grid .supplemental-card { padding:12px; }
+ .supplemental-report-grid .supplemental-head { gap:8px; }
+ .supplemental-report-grid .vacation-head-actions { width:100%; }
+ .supplemental-report-grid .supplemental-row:not(.incident-row) { grid-template-columns:minmax(0,1fr) auto; }
+ .supplemental-report-grid .supplemental-row:not(.incident-row) .vacation-date-info { grid-column:1; grid-row:2; }
+ .supplemental-report-grid .supplemental-row:not(.incident-row) .row-actions { grid-column:2; grid-row:1 / span 2; }
+ .supplemental-report-grid .vacation-analytics { padding:10px; }
+ .supplemental-report-grid .supplemental-head .btn, .supplemental-report-grid .vacation-chart-switch .filter-btn { min-height:40px; }
+ .supplemental-report-grid .row-actions .text-button { width:40px; height:40px; }
+}
+
+/* Controles do período no Semáforo */
+.semaforo-heading-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.semaforo-heading-actions .month-control{margin:0}.chart-day-filter{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.chart-day-filter label{margin:0}.chart-day-filter input{max-width:85px}@media(max-width:600px){.report-page-heading{gap:8px;flex-wrap:wrap}.semaforo-heading-actions .month-control strong{min-width:105px}.chart-day-filter{gap:5px}}
