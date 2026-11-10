@@ -715,3 +715,21 @@ dialog{border:1px solid #e0eae4;box-shadow:0 24px 80px rgba(20,47,34,.25)}
 
 /* Controles do período no Semáforo */
 .semaforo-heading-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.semaforo-heading-actions .month-control{margin:0}.chart-day-filter{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.chart-day-filter label{margin:0}.chart-day-filter input{max-width:85px}@media(max-width:600px){.report-page-heading{gap:8px;flex-wrap:wrap}.semaforo-heading-actions .month-control strong{min-width:105px}.chart-day-filter{gap:5px}}
+
+/* Marcação manual das férias */
+.vacation-programmed{display:inline-flex;align-items:center;gap:6px;margin:5px 0 0;font-size:10px;font-weight:700;color:#65756b;cursor:pointer}
+.vacation-programmed input[type=checkbox]{appearance:none;-webkit-appearance:none;display:inline-grid;place-content:center;width:20px;height:20px;margin:0;padding:0;border:1.5px solid #9bb7a8;border-radius:50%;background:#fff;cursor:pointer;flex:none}
+.vacation-programmed input[type=checkbox]:checked{border-color:#12845f;background:#e7f5ed}
+.vacation-programmed input[type=checkbox]:checked::after{content:"✓";color:#12845f;font-size:14px;font-weight:800;line-height:1}
+.vacation-programmed input[type=checkbox]:focus-visible{outline:3px solid #a8d9bb;outline-offset:2px}
+
+/* Quantidade de pessoas exibidas em cada equipe */
+.attendance-team thead .attendance-team-count{display:inline-block;margin-left:5px;font-size:9px;font-weight:600;line-height:1;color:#fff;vertical-align:baseline}
+@media(max-width:600px){.attendance-team thead .attendance-team-count{font-size:8px}}
+
+/* Quantidade pequena junto ao nome e na mesma cor do título. */
+.attendance-team thead th.person-col{justify-content:flex-start;gap:0.35em}
+.attendance-team thead th.person-col .attendance-team-count{margin-left:0;color:inherit}
+
+/* Contagem com a mesma aparência do nome da equipe. */
+.attendance-team thead th.person-col .attendance-team-count{font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit;vertical-align:baseline}
