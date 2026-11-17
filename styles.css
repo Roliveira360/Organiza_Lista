@@ -733,3 +733,60 @@ dialog{border:1px solid #e0eae4;box-shadow:0 24px 80px rgba(20,47,34,.25)}
 
 /* Contagem com a mesma aparência do nome da equipe. */
 .attendance-team thead th.person-col .attendance-team-count{font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit;vertical-align:baseline}
+
+/* Indicador de dias sem marcação no Semáforo */
+.semaforo-blank-summary{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;margin:0 0 14px;padding:10px 14px;border:1px solid #eadfcb;border-radius:12px;background:#fffbf3;color:#635b4b;font-size:12px}.semaforo-blank-summary strong{color:#76591e}.semaforo-blank-summary span{line-height:1.4}@media(max-width:600px){.semaforo-blank-summary{font-size:11px;padding:9px 11px}}
+
+/* Barra própria, visível também quando o navegador oculta barras nativas. */
+.attendance-bottom-scroll{position:sticky;bottom:12px;z-index:8;display:flex;align-items:center;min-height:12px;padding:0 10px;background:#e7f5ed;border:1px solid #86c3a2;border-radius:9px;box-shadow:0 2px 8px rgba(18,90,58,.2)}
+.attendance-scroll-range{display:block;width:100%;height:10px;margin:0;padding:0;appearance:none;-webkit-appearance:none;background:transparent;cursor:pointer;touch-action:pan-x}
+.attendance-scroll-range::-webkit-slider-runnable-track{height:2px;background:#85bca0;border-radius:8px}
+.attendance-scroll-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:46px;height:5px;margin-top:-1.5px;border:0;border-radius:8px;background:#075d3e;box-shadow:0 0 0 1px #fff}
+.attendance-scroll-range::-moz-range-track{height:2px;background:#85bca0;border-radius:8px}
+.attendance-scroll-range::-moz-range-thumb{width:46px;height:5px;border:0;border-radius:8px;background:#075d3e;box-shadow:0 0 0 1px #fff}
+.attendance-scroll-range:focus-visible{outline:2px solid #12845f;outline-offset:2px}
+.attendance-scroll-range:disabled{opacity:.4;cursor:default}
+@media(max-width:600px){.attendance-bottom-scroll{bottom:calc(70px + env(safe-area-inset-bottom));}}
+
+/* Faixa da equipe acompanha a rolagem vertical sem alterar a lista. */
+.attendance-sticky-overlay{display:none;position:fixed;z-index:7;overflow:hidden;pointer-events:none;background:#fff;box-shadow:0 2px 5px rgba(20,48,35,.16)}
+.attendance-sticky-overlay .attendance-team{margin:0;min-width:0}
+.attendance-sticky-overlay .attendance-team thead th{top:0}
+
+/* Aproveitamento do espaço em todas as páginas, preservando a navegação e a leitura. */
+.main-content { max-width:none; width:auto; padding:20px 16px 20px; min-width:0; }
+#view { width:100%; min-width:0; }
+#view .page-heading { margin-bottom:10px; }
+#view .section-head { margin-bottom:9px; }
+#view .stats-grid { gap:8px; margin-bottom:12px; }
+#view .report-layout, #view .area-chart-grid, #view .supplemental-report-grid, #view .monthly-metric-grid { gap:10px; }
+#view .people-panel, #view .teams-panel, #view .roles-panel { padding:12px; margin-bottom:10px; }
+#view .report-card, #view .function-chart-card, #view .area-chart-card { padding:12px; }
+#view .monthly-ops-section .stat-card, #view .supplemental-report-grid .supplemental-card { padding:14px; }
+#view .history-section { margin:10px 0; }
+#view .turn-toolbar { margin-bottom:8px; }
+#view .person-row { padding-top:8px; padding-bottom:8px; }
+#view .empty { padding:18px; }
+.footer-note { margin-top:14px; }
+@media (min-width:851px) {
+ .main-content { margin-left:228px; padding:20px 16px 20px; }
+}
+@media (min-width:601px) and (max-width:850px) {
+ .main-content { margin-left:205px; padding:16px 12px 20px; }
+}
+@media (max-width:600px) {
+ .main-content { margin-left:0; padding:0 8px calc(82px + env(safe-area-inset-bottom)); }
+ .mobile-header { padding:10px 0 7px; }
+ #view .page-heading { margin:8px 0; }
+ #view .stats-grid { gap:7px; }
+ #view .report-layout, #view .area-chart-grid, #view .supplemental-report-grid, #view .monthly-metric-grid { gap:8px; }
+ #view .people-panel, #view .teams-panel, #view .roles-panel, #view .report-card, #view .area-chart-card, #view .function-chart-card { padding:10px; }
+ #view .monthly-ops-section .stat-card, #view .supplemental-report-grid .supplemental-card { padding:12px; }
+ #view .section-head { gap:8px; }
+ #view .toolbar { flex-wrap:wrap; }
+ #view .attendance-panel { margin-left:0; margin-right:0; }
+}
+
+/* Preenchimento rápido: distinguir DSR dos demais comandos. */
+#view:has(.attendance-panel) .quick-fill-actions .quick-fill-dsr{background:#e5efff;color:#2559a5;border:1px solid #a9c4ef}
+#view:has(.attendance-panel) .quick-fill-actions .quick-fill-dsr:hover{background:#d4e5ff}
